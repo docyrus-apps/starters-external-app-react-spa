@@ -7,11 +7,9 @@ import {
   createRoute,
   createRouter,
 } from '@tanstack/react-router'
-import TanStackQueryDemo from './routes/demo.tanstack-query.tsx'
-
-import Header from './components/Header'
 
 import * as TanStackQueryProvider from './integrations/tanstack-query/root-provider.tsx'
+import { AuthProvider } from './lib/auth-context'
 
 import './styles.css'
 import reportWebVitals from './reportWebVitals.ts'
@@ -21,7 +19,6 @@ import App from './App.tsx'
 const rootRoute = createRootRoute({
   component: () => (
     <>
-      <Header />
       <Outlet />
     </>
   ),
@@ -33,10 +30,7 @@ const indexRoute = createRoute({
   component: App,
 })
 
-const routeTree = rootRoute.addChildren([
-  indexRoute,
-  TanStackQueryDemo(rootRoute),
-])
+const routeTree = rootRoute.addChildren([indexRoute])
 
 const router = createRouter({
   routeTree,
@@ -60,9 +54,11 @@ if (rootElement && !rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement)
   root.render(
     <StrictMode>
-      <TanStackQueryProvider.Provider>
-        <RouterProvider router={router} />
-      </TanStackQueryProvider.Provider>
+      <AuthProvider>
+        <TanStackQueryProvider.Provider>
+          <RouterProvider router={router} />
+        </TanStackQueryProvider.Provider>
+      </AuthProvider>
     </StrictMode>,
   )
 }

@@ -3,6 +3,7 @@
 ## Technical Architecture
 
 ### Core Stack
+
 - **React 19** + **TypeScript** - UI framework with type safety
 - **Vite** - Build tool with HMR and optimized production builds
 - **TanStack Router** - Type-safe, code-based routing
@@ -11,6 +12,7 @@
 - **Vitest** - Unit testing framework
 
 ### Project Structure
+
 ```
 src/
 ├── components/          # Reusable UI components
@@ -24,6 +26,7 @@ src/
 ```
 
 ### Key Configurations
+
 - **TypeScript**: Strict mode, ES2022 target, bundler module resolution
 - **Path Alias**: `@/` maps to `src/` directory
 - **Routing**: Code-based routing in `main.tsx` (file-based optional)
@@ -31,6 +34,7 @@ src/
 - **Testing**: Vitest with jsdom environment
 
 ### Build & Development
+
 ```bash
 npm run dev      # Development server (port 3000)
 npm run build    # Production build + TypeScript check

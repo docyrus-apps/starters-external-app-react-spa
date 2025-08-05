@@ -10,10 +10,15 @@
     "test": "vitest run",
     "lint": "eslint",
     "format": "prettier",
-    "check": "prettier --write . && eslint --fix"
+    "check": "prettier --write . && eslint --fix",
+    "generate-openapi-spec": "curl -o openapi.json https://api.docyrus.app/storage/v1/object/public/tenant-public/${DOCYRUS_TENANT_ID}/openapi.json",
+    "generate-orm": "npx tanstack-db-generator openapi.json"
   },
   "dependencies": {
     "@docyrus/tanstack-db-generator": "^0.0.2",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@supabase/supabase-js": "^2.53.0",
     "@tailwindcss/vite": "^4.0.6",
     "@tanstack/react-query": "^5.66.5",
     "@tanstack/react-router": "^1.121.2",
