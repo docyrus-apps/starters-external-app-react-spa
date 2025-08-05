@@ -93,7 +93,7 @@ npm run check        # Run both Prettier and ESLint with auto-fix
 
 4. **Performance**: Web Vitals is integrated for performance monitoring
 
-5. **DevTools**: Both TanStack Router and Query DevTools are included in development builds
+5. **Build Tool**: The project uses Vite for fast development and optimized production builds
 
 ## Before Completing Any Task
 
