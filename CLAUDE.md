@@ -129,5 +129,5 @@ When adding new features:
 ## Backend Operations
 
 - The only available backend operations are available in `openapi.json` file which is in OpenAPI 3.1 format
-- All available entities are generated into `src/components/db` folder
+- All available entities are generated into `src/db` folder
 - There is no feature to add new data endpoints for now
