@@ -75,6 +75,7 @@ npm run check        # Run both Prettier and ESLint with auto-fix
 
 - Use TanStack Table for table UI generation
 - Available Entity Types and TanStack DB collections are generated in `./src/db/`
+- Check existing Types and Collections in `./src/db/` before creating a new data source
 - Use `UserCollection.getMyInfo()` for profile information of the logged-in user
 - Always check for shadcn components using `pnpx shadcn@latest add [component]` first, then wrap with additional functionality if necessary
 
