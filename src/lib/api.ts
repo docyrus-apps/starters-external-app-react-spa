@@ -1,7 +1,7 @@
 import { MemoryTokenManager, RestApiClient } from '@docyrus/api-client';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://localhost:3366';
-const API_TOKEN = import.meta.env.VITE_API_TOKEN || '';
+const API_BASE_URL = import.meta.env.VITE_DOCYRUS_API_URL || 'https://api.docyrus.app';
+const API_TOKEN = import.meta.env.VITE_DOCYRUS_API_TOKEN || '';
 
 // Create token manager and set initial token
 const tokenManager = new MemoryTokenManager();
@@ -17,7 +17,7 @@ export const apiClient = new RestApiClient({
 
 // Add request interceptor for custom param handling
 apiClient.use({
-  request: async (config) => {
+  request: (config) => {
     // Handle columns array parameter - join as comma-separated
     if (config.params && config.params.columns && Array.isArray(config.params.columns)) {
       config.params = {

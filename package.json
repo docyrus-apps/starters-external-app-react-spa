@@ -12,7 +12,8 @@
     "format": "prettier",
     "check": "prettier --write . && eslint --fix",
     "generate-openapi-spec": "curl -o openapi.json https://api.docyrus.app/storage/v1/object/public/tenant-public/${VITE_DOCYRUS_TENANT_ID}/openapi.json",
-    "generate-orm": "npx tanstack-db-generator openapi.json"
+    "generate-orm": "npx @docyrus/tanstack-db-generator openapi.json",
+    "generate-logo-assets": "npx @docyrus/logo-asset-generator"
   },
   "dependencies": {
     "@docyrus/tanstack-db-generator": "^0.0.8",
