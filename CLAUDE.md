@@ -7,7 +7,7 @@ This is a React Single Page Application starter template built with modern tooli
 - **Framework**: React 19 with TypeScript
 - **Build Tool**: Vite
 - **Routing**: TanStack Router (code-based routing)
-- **Data Fetching**: TanStack Query
+- **Data Fetching**: TanStack Query, TanStack DB
 - **Styling**: Tailwind CSS v4 with @tailwindcss/vite
 - **UI Components**: Shadcn/ui compatible setup
 - **State Management**: Ready for TanStack Store integration
@@ -74,8 +74,10 @@ npm run check        # Run both Prettier and ESLint with auto-fix
 ### 5. **Data Management**
 
 - Use TanStack Table for table UI generation
-- Available Entity Types and TanStack DB collections are generated in `./src/db/`
-- Check existing Types and Collections in `./src/db/` before creating a new data source
+- Available Entity Types and TanStack DB collections are generated in `./src/db/collections/`
+- Available Entity Types are generated in `./src/db/types/`
+- Check existing Types in `./src/db/types/` and Collections in `./src/db/collections/` before creating a new data source
+- When using collection's list and get methods always send columns parameter to select only the columns you need. If you do not send columns parameter, only id column will be returned.
 - Use `UserCollection.getMyInfo()` for profile information of the logged-in user
 - Always check for shadcn components using `pnpx shadcn@latest add [component]` first, then wrap with additional functionality if necessary
 
